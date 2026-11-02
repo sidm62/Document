@@ -24,7 +24,7 @@ public class Document implements DocumentInter {
     }
 
     @Override
-    public String getContent(User user) {
+    public String getContent(User user) throws AccessDeniedEception {
         return content;
     }
 

@@ -1,7 +1,9 @@
 package org.example;
 
+import java.nio.file.AccessDeniedException;
+
 public class Main {
-    public static void main(String[] args) {
+    public static void main(String[] args) throws AccessDeniedEception {
         Library library = new Library();
         AccessControlService acs = AccessControlService.getInstance();
 
@@ -19,7 +21,7 @@ public class Main {
         try {
             System.out.println("A views DOC-001"+ doc1.getContent(A));
 
-        } catch (Exception e) {
+        } catch (AccessDeniedEception e) {
             System.err.println(e.getMessage());
         }
         System.out.println("Access Protected Document");
@@ -29,7 +31,7 @@ public class Main {
         try {
             System.out.println("B views DOC-002"+ doc2.getContent(B));
 
-        } catch (Exception e) {
+        } catch (AccessDeniedEception e) {
             System.err.println(e.getMessage());
         }
 

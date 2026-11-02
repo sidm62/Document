@@ -12,6 +12,6 @@ import java.time.LocalDate;
 
      LocalDate getCreationDate();
 
-     String getContent(User user);
+     String getContent(User user) throws AccessDeniedEception;
 
 }

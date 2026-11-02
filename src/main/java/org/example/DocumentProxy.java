@@ -21,7 +21,7 @@ public class DocumentProxy implements DocumentInter {
     }
 
     @Override
-    public String getContent(User user)  {
+    public String getContent(User user)  throws AccessDeniedEception {
         AccessControlService acs = AccessControlService.getInstance();
 
         if (acs.isAllowed(getId(), user.getUsername())) {
