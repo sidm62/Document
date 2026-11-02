@@ -7,8 +7,10 @@ import java.time.LocalDate;
     String getId();
 
 
-     LocalDate getDate();
 
+
+
+     LocalDate getCreationDate();
 
      String getContent(User user);
 

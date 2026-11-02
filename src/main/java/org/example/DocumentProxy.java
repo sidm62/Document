@@ -16,8 +16,8 @@ public class DocumentProxy implements DocumentInter {
     }
 
     @Override
-    public LocalDate getDate() {
-        return document.getDate();
+    public LocalDate getCreationDate() {
+        return document.getCreationDate();
     }
 
     @Override

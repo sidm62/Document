@@ -15,7 +15,7 @@ public class Main {
         System.out.println("Unprotected Document Access");
         DocumentInter doc1 = library.getDocument("DOC-001");
         System.out.println("Document ID:" + doc1.getId());
-        System.out.println("Creation Date" + doc1.getDate());
+        System.out.println("Creation Date" + doc1.getCreationDate());
         try {
             System.out.println("A views DOC-001"+ doc1.getContent(A));
 
@@ -25,7 +25,7 @@ public class Main {
         System.out.println("Access Protected Document");
         DocumentInter doc2 = library.getDocument("DOC-002");
         System.out.println("Document ID: " + doc2.getId());
-        System.out.println("Creation Date: " + doc2.getDate());
+        System.out.println("Creation Date: " + doc2.getCreationDate());
         try {
             System.out.println("B views DOC-002"+ doc2.getContent(B));
 

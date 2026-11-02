@@ -19,7 +19,7 @@ public class Document implements DocumentInter {
     }
 
     @Override
-    public LocalDate getDate() {
+    public LocalDate getCreationDate() {
         return date;
     }
 
