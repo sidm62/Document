@@ -21,15 +21,16 @@ public class DocumentProxy implements DocumentInter {
     }
 
     @Override
-    public String getContent(User user) throws AccessDeniedException {
+    public String getContent(User user)  {
         AccessControlService acs = AccessControlService.getInstance();
 
         if (acs.isAllowed(getId(), user.getUsername())) {
             return document.getContent(user);
         } else {
-            throw new AccessDeniedException(
+            System.out.println(
                     "Access Denied: User '" + user.getUsername() + "' does not have permission to view document '" + getId() + "'."
             );
+            return null;
+        }
     }
-}
 }

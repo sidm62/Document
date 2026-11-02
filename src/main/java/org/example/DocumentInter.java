@@ -10,6 +10,6 @@ import java.time.LocalDate;
      LocalDate getDate();
 
 
-     String getContent(User user) throws AccessDeniedException;
+     String getContent(User user);
 
 }

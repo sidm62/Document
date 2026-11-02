@@ -1,7 +1,7 @@
 package org.example;
 
 public class Main {
-    public static void main(String[] args) throws AccessDeniedException {
+    public static void main(String[] args) {
         Library library = new Library();
         AccessControlService acs = AccessControlService.getInstance();
 
@@ -19,7 +19,7 @@ public class Main {
         try {
             System.out.println("A views DOC-001"+ doc1.getContent(A));
 
-        } catch (AccessDeniedException e) {
+        } catch (Exception e) {
             System.err.println(e.getMessage());
         }
         System.out.println("Access Protected Document");
@@ -29,7 +29,7 @@ public class Main {
         try {
             System.out.println("B views DOC-002"+ doc2.getContent(B));
 
-        } catch (AccessDeniedException e) {
+        } catch (Exception e) {
             System.err.println(e.getMessage());
         }
 
