@@ -1,0 +1,35 @@
+package org.example;
+
+import java.time.LocalDate;
+
+public class DocumentProxy implements DocumentInter {
+
+    private Document document;
+
+    public DocumentProxy(Document document) {
+        this.document = document;
+    }
+
+    @Override
+    public String getId() {
+        return document.getId();
+    }
+
+    @Override
+    public LocalDate getDate() {
+        return document.getDate();
+    }
+
+    @Override
+    public String getContent(User user) throws AccessDeniedException {
+        AccessControlService acs = AccessControlService.getInstance();
+
+        if (acs.isAllowed(getId(), user.getUsername())) {
+            return document.getContent(user);
+        } else {
+            throw new AccessDeniedException(
+                    "Access Denied: User '" + user.getUsername() + "' does not have permission to view document '" + getId() + "'."
+            );
+    }
+}
+}
